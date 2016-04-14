@@ -19,6 +19,13 @@ var routes = [{
     template: './../templates/index.html',
     filename: 'guess_letter.html'
   }
+}, {
+  name: '03',
+  entry: './03.anime_hello_world/start',
+  plugins: {
+    template: './../templates/index.html',
+    filename: 'anime_hello_world.html'
+  }
 },]
 
 module.exports = routes;

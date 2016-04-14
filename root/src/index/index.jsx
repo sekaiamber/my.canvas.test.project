@@ -22,6 +22,7 @@ var Index = React.createClass({
           <ol>
             <li><a href="./hello_world.html">Hello world</a></li>
             <li><a href="./guess_letter.html">Guess Letter</a></li>
+            <li><a href="./anime_hello_world.html">Anime Hello World</a></li>
           </ol>
         </div>
       </div>
