@@ -12,6 +12,13 @@ var routes = [{
     template: './../templates/index.html',
     filename: 'hello_world.html'
   }
+}, {
+  name: '02',
+  entry: './02.guess_letter/start',
+  plugins: {
+    template: './../templates/index.html',
+    filename: 'guess_letter.html'
+  }
 },]
 
 module.exports = routes;
