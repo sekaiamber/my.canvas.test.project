@@ -2,12 +2,12 @@ var webpack = require('webpack');
 var path = require('path');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
+var routes = require('./route');
 
 var config = {
   context: path.join(__dirname, '..', '/root/src'),
   entry: {
       // Add each page's entry here
-      index: './index/start'
     },
     output: {
       path: path.join(__dirname, '..', '/root/build'),
@@ -18,13 +18,7 @@ var config = {
         __DEV__: JSON.stringify(JSON.parse(process.env.BUILD_DEV || 'true')), // judge if dev environment.
         __PRERELEASE__: JSON.stringify(JSON.parse(process.env.BUILD_PRERELEASE || 'false')) // judge if secret environment.
       }),
-      new ExtractTextPlugin("[name].css"),
-      new HtmlWebpackPlugin({
-        template: './../templates/index.html',
-        filename: 'index.html',
-        chunks: ['index'],
-        inject: 'body'
-      })
+      new ExtractTextPlugin("[name].css")
     ],
     module: {
       perLoaders: [
@@ -82,5 +76,16 @@ var config = {
       // }
     },
 };
+
+for (var i = 0; i < routes.length; i++) {
+  var route = routes[i];
+  config.entry[route.name] = route.entry;
+  config.plugins.push(new HtmlWebpackPlugin({
+    template: route.plugins.template || './../templates/index.html',
+    filename: route.plugins.filename || 'index.html',
+    chunks: [route.name],
+    inject: 'body'
+  }));
+}
 
 module.exports = config;
