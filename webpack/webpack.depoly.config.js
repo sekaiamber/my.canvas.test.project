@@ -4,11 +4,11 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var uglifyJsPlugin = webpack.optimize.UglifyJsPlugin;
 var CommonsChunkPlugin = webpack.optimize.CommonsChunkPlugin;
+var routes = require('./route');
 
 var config = {
   context: path.join(__dirname, '..', '/root/src'),
   entry: {
-      index: './index/start',
       vendors: ['react', 'react-router', 'react-dom', 'jquery']
   },
   output: {
@@ -33,14 +33,7 @@ var config = {
       }),
       new CommonsChunkPlugin('vendors', 'vendors.[hash].js', Infinity),
       new ExtractTextPlugin("[name].[hash].css"),
-      new webpack.optimize.DedupePlugin(),
-      new HtmlWebpackPlugin({
-        template: './../templates/index.html',
-        filename: 'index.html',
-        chunks: ['index','vendors'],
-        inject: 'body',
-        hash: true
-      })
+      new webpack.optimize.DedupePlugin()
   ],
   module: {
       loaders: [
@@ -72,5 +65,17 @@ var config = {
     extensions: ['', '.js', '.json', '.jsx']
   }
 };
+
+for (var i = 0; i < routes.length; i++) {
+  var route = routes[i];
+  config.entry[route.name] = route.entry;
+  config.plugins.push(new HtmlWebpackPlugin({
+    template: route.plugins.template || './../templates/index.html',
+    filename: route.plugins.filename || 'index.html',
+    chunks: [route.name,'vendors'],
+    inject: 'body',
+    hash: true
+  }));
+}
 
 module.exports = config;
