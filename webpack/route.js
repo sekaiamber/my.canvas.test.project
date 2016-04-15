@@ -33,6 +33,20 @@ var routes = [{
     template: './../templates/index.html',
     filename: 'shape.html'
   }
+}, {
+  name: '05',
+  entry: './05.composite/start',
+  plugins: {
+    template: './../templates/index.html',
+    filename: 'composite.html'
+  }
+}, {
+  name: '06',
+  entry: './06.transform/start',
+  plugins: {
+    template: './../templates/index.html',
+    filename: 'transform.html'
+  }
 },]
 
 module.exports = routes;
