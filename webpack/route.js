@@ -26,6 +26,13 @@ var routes = [{
     template: './../templates/index.html',
     filename: 'anime_hello_world.html'
   }
+}, {
+  name: '04',
+  entry: './04.shape/start',
+  plugins: {
+    template: './../templates/index.html',
+    filename: 'shape.html'
+  }
 },]
 
 module.exports = routes;

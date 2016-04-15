@@ -2,3 +2,5 @@ node_modules/
 root/dist/*
 npm-debug.log
 root/build/*
+jsconfig.json
+typings/
