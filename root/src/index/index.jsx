@@ -26,6 +26,7 @@ var Index = React.createClass({
             <li><a href="./shape.html">Shape</a></li>
             <li><a href="./composite.html">Composite</a></li>
             <li><a href="./transform.html">Transform</a></li>
+            <li><a href="./color.html">Color</a></li>
           </ol>
         </div>
       </div>
