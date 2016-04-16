@@ -47,6 +47,13 @@ var routes = [{
     template: './../templates/index.html',
     filename: 'transform.html'
   }
+}, {
+  name: '07',
+  entry: './07.color/start',
+  plugins: {
+    template: './../templates/index.html',
+    filename: 'color.html'
+  }
 },]
 
 module.exports = routes;
