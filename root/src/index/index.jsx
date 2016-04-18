@@ -27,6 +27,9 @@ var Index = React.createClass({
             <li><a href="./composite.html">Composite</a></li>
             <li><a href="./transform.html">Transform</a></li>
             <li><a href="./color.html">Color</a></li>
+            <li><a href="./fill_image.html">Fill Image</a></li>
+            <li><a href="./shadow.html">Shadow</a></li>
+            <li><a href="./clean_canvas.html">Clean Canvas</a></li>
           </ol>
         </div>
       </div>

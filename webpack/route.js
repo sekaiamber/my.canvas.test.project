@@ -54,6 +54,27 @@ var routes = [{
     template: './../templates/index.html',
     filename: 'color.html'
   }
+}, {
+  name: '08',
+  entry: './08.fill_image/start',
+  plugins: {
+    template: './../templates/index.html',
+    filename: 'fill_image.html'
+  }
+}, {
+  name: '09',
+  entry: './09.shadow/start',
+  plugins: {
+    template: './../templates/index.html',
+    filename: 'shadow.html'
+  }
+}, {
+  name: '10',
+  entry: './10.clean_canvas/start',
+  plugins: {
+    template: './../templates/index.html',
+    filename: 'clean_canvas.html'
+  }
 },]
 
 module.exports = routes;
