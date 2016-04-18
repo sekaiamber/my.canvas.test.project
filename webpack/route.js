@@ -75,6 +75,13 @@ var routes = [{
     template: './../templates/index.html',
     filename: 'clean_canvas.html'
   }
+}, {
+  name: '11',
+  entry: './11.check_point_in_path/start',
+  plugins: {
+    template: './../templates/index.html',
+    filename: 'check_point_in_path.html'
+  }
 },]
 
 module.exports = routes;

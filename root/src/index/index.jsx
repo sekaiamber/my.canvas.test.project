@@ -30,6 +30,7 @@ var Index = React.createClass({
             <li><a href="./fill_image.html">Fill Image</a></li>
             <li><a href="./shadow.html">Shadow</a></li>
             <li><a href="./clean_canvas.html">Clean Canvas</a></li>
+            <li><a href="./check_point_in_path.html">Check Point In Path</a></li>
           </ol>
         </div>
       </div>
