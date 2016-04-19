@@ -82,6 +82,13 @@ var routes = [{
     template: './../templates/index.html',
     filename: 'check_point_in_path.html'
   }
+}, {
+  name: '12',
+  entry: './12.text_in_form/start',
+  plugins: {
+    template: './../templates/index.html',
+    filename: 'text_in_form.html'
+  }
 },]
 
 module.exports = routes;

@@ -35,6 +35,10 @@ var Index = React.createClass({
           <li><a href="./clean_canvas.html">Clean Canvas</a></li>
           <li><a href="./check_point_in_path.html">Check Point In Path</a></li>
         </ol>
+        <h3>文本控制</h3>
+        <ol>
+          <li><a href="./text_in_form.html">Text In Form</a></li>
+        </ol>
       </div>
     )
   }
