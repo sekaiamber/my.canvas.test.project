@@ -38,6 +38,7 @@ var Index = React.createClass({
         <h3>文本控制</h3>
         <ol>
           <li><a href="./text_in_form.html">Text In Form</a></li>
+          <li><a href="./text_in_form_v2.html">Text In Form 2.0</a></li>
         </ol>
       </div>
     )

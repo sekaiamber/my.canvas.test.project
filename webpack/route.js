@@ -89,6 +89,13 @@ var routes = [{
     template: './../templates/index.html',
     filename: 'text_in_form.html'
   }
+}, {
+  name: '13',
+  entry: './13.text_in_form_v2/start',
+  plugins: {
+    template: './../templates/index.html',
+    filename: 'text_in_form_v2.html'
+  }
 },]
 
 module.exports = routes;
