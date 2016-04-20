@@ -10,6 +10,7 @@ const noop = function() {};
 
 // apps
 const app = require('./app/drawScreen');
+const update = require('./app/update');
 
 var Index = React.createClass({
   getInitialState() {
@@ -31,11 +32,30 @@ var Index = React.createClass({
       shadowOffsetX: 1,
       shadowOffsetY: 1,
       shadowBlur: 2,
+      anime: false,
+      animeColor: [
+        {color: 'FF0000', stopPercent: 0},
+        {color: 'FFFF00', stopPercent: .125},
+        {color: '00FF00', stopPercent: .375},
+        {color: '0000FF', stopPercent: .625},
+        {color: 'FF00FF', stopPercent: .875},
+        {color: 'FF0000', stopPercent: 1},
+      ]
     };
   },
-  onStateChange(key, e, color) {
+  onStateChange(key, e, type) {
     var obj = {};
-    obj[key] = color ? e.hex : e.target.value;
+    switch (type) {
+      case 'color':
+        obj[key] = e.hex;
+        break;
+      case 'checkbox':
+        obj[key] = e.target.checked;
+        break;
+      default:
+        obj[key] = e.target.value;
+        break;
+    }
     this.setState(obj);
   },
   render: function () {
@@ -60,13 +80,15 @@ var Index = React.createClass({
       shadowOffsetX: this.state.shadowOffsetX,
       shadowOffsetY: this.state.shadowOffsetY,
       shadowBlur: this.state.shadowBlur,
+      anime: this.state.anime,
+      animeColor: this.state.animeColor,
     }
     return (
       <div>
         <h1>13. Text In Form 2.0</h1>
         <Support />
         <div className="opt">
-          <CanvasApp {...CanvasData} update={noop} render={app} />
+          <CanvasApp {...CanvasData} update={update} render={app} />
           <div className="form-area">
             <form>
               <fieldset>
@@ -134,6 +156,10 @@ var Index = React.createClass({
                 Font Color 1: <ColorPicker onColorChange={v => this.onStateChange('fontColor1', v, 'color')}/>
                 <br/>
                 Font Color 2: <ColorPicker onColorChange={v => this.onStateChange('fontColor2', v, 'color')}/>
+              </fieldset>
+              <fieldset>
+                <legend>Animation</legend>
+                <label htmlFor="checkbox"><input type="checkbox" name="checkbox" id="checkbox" checked={this.state.anime} onChange={e => this.onStateChange('anime', e, 'checkbox')}/>Animation?</label>
               </fieldset>
             </form>
           </div>
