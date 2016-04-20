@@ -21,13 +21,9 @@ function drawScreen(self) {
   switch (self.props.fontColorFillType) {
     case 'linear':
       fillStyle = context.createLinearGradient(100, 0, canvas.offsetWidth - 100, 0);
-      fillStyle.addColorStop(0, `#${self.props.fontColor1}`);
-      fillStyle.addColorStop(1, `#${self.props.fontColor2}`);
       break;
     case 'radial':
       fillStyle = context.createRadialGradient(canvas.offsetWidth / 2, 200, 250, canvas.offsetWidth / 2, 200, 0);
-      fillStyle.addColorStop(1, `#${self.props.fontColor1}`);
-      fillStyle.addColorStop(0, `#${self.props.fontColor2}`);
       break;
     case 'image':
       fillStyle = context.createPattern(pattern, 'repeat');
@@ -35,6 +31,16 @@ function drawScreen(self) {
     default:
       fillStyle = `#${self.props.fontColor1}`;
       break;
+  }
+  if (self.props.fontColorFillType == 'linear' || self.props.fontColorFillType == 'radial') {
+    if (self.props.anime) {
+      for (var i = 0; i < self.props.animeColor.length; i++) {
+        fillStyle.addColorStop(self.props.animeColor[i].stopPercent, `#${self.props.animeColor[i].color}`);
+      }
+    } else {
+      fillStyle.addColorStop(0, `#${self.props.fontColor1}`);
+      fillStyle.addColorStop(1, `#${self.props.fontColor2}`);
+    }
   }
   context.fillStyle = fillStyle;
   var xPosition = (canvas.offsetWidth / 2) - (textWidth / 2);

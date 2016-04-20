@@ -6,7 +6,9 @@ helloworld.src = require('./../../assets/images/logo.svg');
 var CanvasApp = React.createClass({
   dom: null,
   getInitialState() {
-    return {};
+    return {
+      keepRendering: true,
+    };
   },
   componentDidMount() {
     this.dom = ReactDOM.findDOMNode(this.refs.dom);
