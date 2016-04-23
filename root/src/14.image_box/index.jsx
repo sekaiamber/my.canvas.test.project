@@ -70,7 +70,7 @@ var Index = React.createClass({
     }
     return (
       <div>
-        <h1>14. Image Box</h1>
+        <h1>14. Lolis In A Box</h1>
         <Support />
         <div className="opt">
           <CanvasApp {...CanvasData} update={update} render={app} />

@@ -42,7 +42,7 @@ var Index = React.createClass({
         </ol>
         <h3>图像控制</h3>
         <ol>
-          <li><a href="./image_box.html">Image Box</a></li>
+          <li><a href="./image_box.html">Lolis In A Box</a></li>
         </ol>
       </div>
     )
