@@ -40,6 +40,10 @@ var Index = React.createClass({
           <li><a href="./text_in_form.html">Text In Form</a></li>
           <li><a href="./text_in_form_v2.html">Text In Form 2.0</a></li>
         </ol>
+        <h3>图像控制</h3>
+        <ol>
+          <li><a href="./image_box.html">Image Box</a></li>
+        </ol>
       </div>
     )
   }
