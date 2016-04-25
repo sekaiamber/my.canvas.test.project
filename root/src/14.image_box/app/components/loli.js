@@ -7,7 +7,9 @@ var loli = function (option) {
       this[key] = option[key];
     }
   }
-  this.temp.scale_x = option.scale.x;
+  this.temp = {
+    scale_x: option.scale.x,
+  }
 }
 
 var proto = {
@@ -30,7 +32,6 @@ var proto = {
   turning_scale: 1,
   turning_speed: .2,
   turning_face: -1,
-  temp: {},
   update: function () {
     // 移动控制，将人物在100-400内来回平移
     this.position.x += this.face * this.speed;

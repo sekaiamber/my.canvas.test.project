@@ -45,8 +45,8 @@ var config = {
         y: 350
       },
       scale: {
-        x: 1,
-        y: 1,
+        x: .5,
+        y: .5,
       },
       face: 1,
       speed: 2,
