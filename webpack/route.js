@@ -96,12 +96,19 @@ var routes = [{
     template: './../templates/index.html',
     filename: 'text_in_form_v2.html'
   }
-},  {
+}, {
   name: '14',
   entry: './14.image_box/start',
   plugins: {
     template: './../templates/index.html',
     filename: 'image_box.html'
+  }
+}, {
+  name: '15',
+  entry: './15.walk_in_map/start',
+  plugins: {
+    template: './../templates/index.html',
+    filename: 'walk_in_map.html'
   }
 }]
 
