@@ -44,6 +44,7 @@ var Index = React.createClass({
         <ol>
           <li><a href="./image_box.html">Lolis In A Box</a></li>
           <li><a href="./walk_in_map.html">Walk In Map</a></li>
+          <li><a href="./stamp.html">Stamp</a></li>
         </ol>
       </div>
     )

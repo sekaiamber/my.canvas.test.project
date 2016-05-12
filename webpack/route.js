@@ -110,6 +110,13 @@ var routes = [{
     template: './../templates/index.html',
     filename: 'walk_in_map.html'
   }
+}, {
+  name: '16',
+  entry: './16.stamp/start',
+  plugins: {
+    template: './../templates/index.html',
+    filename: 'stamp.html'
+  }
 }]
 
 module.exports = routes;
